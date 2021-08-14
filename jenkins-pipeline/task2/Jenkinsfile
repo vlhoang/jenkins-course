@@ -1,14 +1,18 @@
 pipeline {
-    agent any
+    agent {
+        node {
+            label "Linux-Slave-01"
+        }
+    }
     stages {
         stage('task1') {
             steps {
-                sh 'echo "Hello jenkins pipeline"'
+                sh 'echo "Hello task1"'
             }
         }
         stage('task2') {
             steps {
-                sh 'echo "Hello task2"'
+                sh 'echo "Stack 2 !!!!"'
             }
         }
     }
